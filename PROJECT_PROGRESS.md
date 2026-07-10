@@ -130,8 +130,22 @@ For modeling, it means I cannot assume a variable's predictive power will remain
 
 - ask grok if we specifically did collinearity or multicollinearity
 
+### 7.9.2026 My Own Prediction on Lending Club's Underwriting Issues
 
+My current hypothesis is that while my first model is underperforming on raw accuracy metrics, the specific “gap” it reveals — particularly in the false positives — is actually highlighting a major weakness in Lending Club’s underwriting. 
 
+I believe we’re seeing evidence that Lending Club was routinely approving higher-risk loans (D-grade and below, high revol_util, recent inquiries, elevated interest rates) that carried more risk than their eventual performance suggested. This pattern appears to have been common across multiple years, pointing to an overly aggressive lending strategy that prioritized volume over tighter risk controls.
+
+**What I would have done differently (as a business strategy):**
+
+Lending Club should have adopted a much more disciplined, risk-first approach, especially after the 2008–2009 period. Instead of chasing rapid growth through looser standards, I would have:
+
+- Significantly tightened credit criteria starting around 2010, rejecting a higher percentage of subprime applications (D-grade and below).
+- Raised interest rates more aggressively on borrowers to better price the risk.
+- Been quicker to move struggling accounts into collections or charge-off earlier rather than letting late payments drag on for months.
+- Implemented stricter ongoing monitoring (more inquiries, utilization limits, etc.) to catch problems before they snowballed.
+
+In short, they got caught up in growth-at-all-costs and paid for it. A more conservative strategy like what traditional banks (Chase, JPMorgan, etc.) typically follow would have likely produced fewer bad loans and better long-term stability, even if it meant slower short-term growth.
 
 ## Model updates:
 
