@@ -108,27 +108,12 @@ This gives me reasonable confidence that the features are appropriate for predic
 
 #### Data Quality & Reliability:
 
-**Are there extreme outliers or strange distributions?**
 **Are the variables stable over time, or does it behave very differently by year?**
 In looking at the default/delinquency rates by year, there is some variation in terms of rate change. But the overall trend is continually increased and then plateaus moderately. Then, defaults/delinquencies begin to trail off in 2016 onward. 
 
 However, that trend will likely not signal easy predictability, or stability for LC. In my year_summary, even though I created delinquencies and defaults as overlapping variables, there is a significant uptick with late payments of shifting time windows. So although the numbers themselves follow a trend, it does not spell stability for LC. 
 
 For modeling, it means I cannot assume a variable's predictive power will remain the same across the entire data set. 
-
-#### Redundancy / Independence:
-**Is this variable highly correlated with another one I'm already keeping?**
-**Am I double-counting the same information?**
-**Would keeping both features add real value or just noise?**
-
-#### Practical Value:
-**How easy would this variable be to explain to a non-technical stakeholder (e.g. your mentor or client)?**
-**Does it improve model interpretability or make it more of a black box?**
-
-#### Takeaways so far:
-- I have absorbed a ton of context and information about finance data so far. This data set and the subject matter overall feels so much more approachable than when I started. 
-
-- ask grok if we specifically did collinearity or multicollinearity
 
 ### 7.9.2026 My Own Prediction on Lending Club's Underwriting Issues
 
@@ -146,58 +131,6 @@ Lending Club should have adopted a much more disciplined, risk-first approach, e
 - Implemented stricter ongoing monitoring (more inquiries, utilization limits, etc.) to catch problems before they snowballed.
 
 In short, they got caught up in growth-at-all-costs and paid for it. A more conservative strategy like what traditional banks (Chase, JPMorgan, etc.) typically follow would have likely produced fewer bad loans and better long-term stability, even if it meant slower short-term growth.
-
-## Model updates:
-
-- 7/9/2026: First pass failed. 0 prediction for Class 1 defaults using 30% of sample. (150k)
-    - pass 1 precision, recall, f1-score all 0.00. 
-    Classification Report:
-                precision    recall  f1-score   support
-
-            0       0.88      1.00      0.94    132165
-            1       0.00      0.00      0.00     17835
-
-        accuracy                           0.88    150000
-    macro avg       0.44      0.50      0.47    150000
-    weighted avg       0.78      0.88      0.83    150000
-    ROC-AUC Score: 0.71
-
-    - pass 2 huge improvement. Changed class_weight to 'balanced'. 
-        Classification Report:
-                    precision    recall  f1-score   support
-
-                0       0.94      0.58      0.71    132165
-                1       0.19      0.72      0.30     17835
-
-        accuracy                            0.59    150000
-        macro avg       0.56      0.65      0.51    150000
-        weighted avg    0.85      0.59      0.67    150000
-        ROC-AUC Score: 0.7108
-
-
-pass 3
-pass 4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
